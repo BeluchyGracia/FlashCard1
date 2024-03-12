@@ -26,4 +26,4 @@
    - [ ] Change the background color of the multiple choice answers when clicked to indicate whether the question waanswered correctly
 - [ ] Further customize and style the card
 
-https://github.com/BeluchyGracia/FlashCard1/blob/main/Screen_recording_20240311_201847.webm
+<video src ="https://github.com/BeluchyGracia/FlashCard1/blob/main/Screen_recording_20240311_201847.webm" width=200><br>
