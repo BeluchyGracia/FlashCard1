@@ -3,6 +3,7 @@ package com.example.flashcard
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 
@@ -24,6 +25,47 @@ class MainActivity : AppCompatActivity() {
         flashcardAnswer.setOnClickListener {
             flashcardAnswer.visibility = View.INVISIBLE
             flashcardQuestion.visibility = View.VISIBLE
+        }
+
+        val isShowingAnswers = findViewById<ImageView>(R.id.eyeoff)
+        val showAnswers = findViewById<ImageView>(R.id.eye)
+
+
+
+        flashcardQuestion.visibility = View.VISIBLE
+
+
+        isShowingAnswers.setOnClickListener {
+            if (textView1.visibility == View.VISIBLE) {
+                textView1.visibility = View.INVISIBLE
+                textView2.visibility = View.INVISIBLE
+                textView3.visibility = View.INVISIBLE
+                resetTextViewBackgrounds(textView1, textView2, textView3)
+
+                isShowingAnswers.visibility = View.INVISIBLE
+                showAnswers.visibility = View.VISIBLE
+            } else {
+                textView1.visibility = View.VISIBLE
+                textView2.visibility = View.VISIBLE
+                textView3.visibility = View.VISIBLE
+            }
+        }
+        showAnswers.setOnClickListener {
+            if (textView1.visibility == View.INVISIBLE) {
+                isShowingAnswers.visibility = View.VISIBLE
+                textView1.visibility = View.VISIBLE
+                textView2.visibility = View.VISIBLE
+                textView3.visibility = View.VISIBLE
+                resetTextViewBackgrounds(textView1, textView2, textView3)
+                isShowingAnswers.visibility = View.VISIBLE
+                showAnswers.visibility = View.INVISIBLE
+
+            }
+            else {
+                textView1.visibility = View.INVISIBLE
+                textView2.visibility = View.INVISIBLE
+                textView3.visibility = View.INVISIBLE
+            }
         }
 
         textView1.setOnClickListener {
